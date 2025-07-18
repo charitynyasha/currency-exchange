@@ -31,18 +31,19 @@ useEffect(() => {
 console.log(currencies);
 
 const currencyConverter = async()=>{
+  console.log("Converting from", fromCurrency, "to", toCurrency, "with amount", amount);
 //conversion logic
 if(!amount) return;
 setConverting(true);
 try{
-    const response = await fetch(`https://api.frankfurter.dev/v1/latest?amount=${amount}1&from=$${fromCurrency}&to=${toCurrency}`);
+    const response = await fetch(`https://api.frankfurter.dev/v1/latest?amount=${amount}1&from=${fromCurrency}&to=${toCurrency}`);
     const data = await response.json();
     setConvertedAmount(data.rates[toCurrency] + "" + toCurrency)
   }
   catch(error){
     console.error("Error fetching currencies:", error);
   }finally{
-    setConverting(false);
+    setConverting(true);
   }
 }
 
