@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee,faStar,faArrowsLeftRight } from '@fortawesome/free-solid-svg-icons';
-import CurrencyDropdown from './components/dropdown.jsx';
+import CurrencyDropdown from './components/CurrencyDropdown.jsx';
 const App = () => {
   const [currencies, setCurrencies] = useState([]);
   const [amount, setAmount] = useState(1);
